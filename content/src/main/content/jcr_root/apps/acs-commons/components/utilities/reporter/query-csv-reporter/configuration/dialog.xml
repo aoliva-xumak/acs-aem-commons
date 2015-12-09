@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    activeTab="0"
+    title="Query Packager Configuration"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <config
+            jcr:primaryType="cq:Widget"
+            title="Query Reporter Configuration"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <file-name
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="query report"
+                    fieldDescription="Name of the CSV file to be created. [ Default: query report]"
+                    fieldLabel="CSV File Name"
+                    name="./fileName"
+                    xtype="textfield"/>
+                <property-columns
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="List the Properties that will be added as columns on the file, the resource path column will be set as the last, if there is no property listed only the path column will be displayed on the file."
+                    fieldLabel="Property Columns"
+                    name="./propertyColumns"
+                    xtype="multifield"/>
+                <query-language
+                    jcr:primaryType="cq:Widget"
+                    defaultValue="JCR-SQL2"
+                    fieldLabel="Query Language"
+                    name="./queryLanguage"
+                    type="select"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <xpath
+                            jcr:primaryType="nt:unstructured"
+                            text="xpath"
+                            value="xpath"/>
+                        <jcr-sql
+                            jcr:primaryType="nt:unstructured"
+                            text="JCR-SQL"
+                            value="sql"/>
+                        <jcr-sql2
+                            jcr:primaryType="nt:unstructured"
+                            text="JCR-SQL2"
+                            value="JCR-SQL2"/>
+                        <query-builder
+                            jcr:primaryType="nt:unstructured"
+                            text="QueryBuilder"
+                            value="queryBuilder"/>
+                        <list
+                            jcr:primaryType="nt:unstructured"
+                            text="List (comma, tab, space, semicolon and line feed delimited)"
+                            value="list"/>
+                    </options>
+                </query-language>
+                <query
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Query which will collect the resource to package. Must match the above Query Language."
+                    fieldLabel="Query"
+                    name="./query"
+                    xtype="textarea"/>
+                <relative-path
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Relative path that is resolved against each query result resource. If resolves to a resource, this resource is included in the package."
+                    fieldLabel="Relative Path"
+                    name="./relPath"
+                    xtype="textfield"/>
+            </items>
+        </config>
+    </items>
+</jcr:root>

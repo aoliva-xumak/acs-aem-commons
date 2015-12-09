@@ -46,6 +46,8 @@
         <include pattern="/etc/acs-commons/packagers"/>
         <include pattern="/etc/acs-commons/packagers/jcr:content"/>
         <include pattern="/etc/acs-commons/workflow-remover(.*)"/>
+        <include pattern="/etc/legg-mason/report"/>
+        <include pattern="/etc/legg-mason/report/jcr:content"/>
     </filter>
     <filter root="/apps/cq/core/content/nav/tools/acs-commons"/>
 </workspaceFilter>

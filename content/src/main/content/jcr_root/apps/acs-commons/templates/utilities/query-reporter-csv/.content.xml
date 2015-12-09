@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Utility page for exporting  query results to a csv file."
+    jcr:primaryType="cq:Template"
+    jcr:title="Query Reporter to CSV"
+    allowedPaths="[/etc/acs-commons/reporters(/.*)?,/etc/reporters(/.*)?,/etc/reports(/.*)?]"
+    ranking="{Long}120">
+    <jcr:content
+        cq:designPath="/etc/designs/acs-commons"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="acs-commons/components/utilities/reporter/query-csv-reporter"/>
+</jcr:root>
